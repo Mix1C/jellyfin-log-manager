@@ -74,7 +74,7 @@ public class LogManagerController : ControllerBase
     [HttpGet("DbPath")]
     [Authorize(Policy = "RequiresElevation")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public ActionResult<object> GetDbPath()
+    public ActionResult<object> GetDbPathInfo() 
     {
         var dbPath = GetDbPath();
         return Ok(new { path = dbPath, exists = System.IO.File.Exists(dbPath) });
