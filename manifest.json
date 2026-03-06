@@ -1,0 +1,20 @@
+[
+  {
+    "category": "General",
+    "guid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Log Manager",
+    "description": "Adds a toolbar to the Activity Log page to clear logs, backup the database, and restart Jellyfin. No configuration needed.",
+    "owner": "Mix1C",
+    "overview": "Adds Clear Log, Backup DB, and Restart buttons directly to the Jellyfin Activity Log page.",
+    "versions": [
+      {
+        "version": "1.0.0.0",
+        "changelog": "Initial release.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Mix1C/jellyfin-log-manager/releases/download/v1.0.0/Jellyfin.Plugin.LogManager.dll",
+        "checksum": "",
+        "timestamp": "2026-03-06T00:00:00Z"
+      }
+    ]
+  }
+]
