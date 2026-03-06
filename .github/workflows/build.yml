@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Setup .NET 9
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
@@ -25,3 +25,13 @@ jobs:
         with:
           name: Jellyfin.Plugin.LogManager
           path: publish/Jellyfin.Plugin.LogManager.dll
+
+      - name: Create Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "Log Manager v1.0.0"
+          files: publish/Jellyfin.Plugin.LogManager.dll
+          body: "Jellyfin Log Manager Plugin - adds Clear Log, Backup DB, and Restart buttons to the Activity Log page."
+          token: ${{ secrets.GITHUB_TOKEN }}
