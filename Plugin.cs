@@ -29,8 +29,7 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
             new PluginPageInfo
             {
                 Name = "logmanager",
-                EmbeddedResourcePath = $"{GetType().Namespace}.Web.logmanager.js",
-                EnableInMainUI = true
+                EmbeddedResourcePath = $"{GetType().Namespace}.Web.logmanager.js"
             }
         };
     }
