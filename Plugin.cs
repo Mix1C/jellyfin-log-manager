@@ -22,7 +22,17 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 
     public static Plugin? Instance { get; private set; }
 
-    public IEnumerable<PluginPageInfo> GetPages()
+     public IEnumerable<PluginPageInfo> GetPages()
+{
+    return new[]
+    {
+        new PluginPageInfo
+        {
+            Name = "logmanager",
+            EmbeddedResourcePath = $"{GetType().Namespace}.Web.logmanager.js"
+        }
+    };
+}
     {
         return new[]
         {
@@ -30,7 +40,6 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
             {
                 Name = "logmanager",
                 EmbeddedResourcePath = $"{GetType().Namespace}.Web.logmanager.js",
-                EnableInMainUI = true
             }
         };
     }
